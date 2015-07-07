@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Complication - OpenMotionClassifier WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Glance - OpenMotionClassifier WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Notification - OpenMotionClassifier WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>OpenMotionClassifier WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>OpenMotionClassifier.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7285A3891B4A086200CA0615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7285A39D1B4A086200CA0615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7285A3A81B4A086200CA0615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7285A3B11B4A086200CA0615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7285A3C01B4A086200CA0615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

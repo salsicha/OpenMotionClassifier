@@ -1,0 +1,794 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7285A38E1B4A086200CA0615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A38D1B4A086200CA0615 /* AppDelegate.swift */; };
+		7285A3901B4A086200CA0615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A38F1B4A086200CA0615 /* ViewController.swift */; };
+		7285A3931B4A086200CA0615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3911B4A086200CA0615 /* Main.storyboard */; };
+		7285A3951B4A086200CA0615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3941B4A086200CA0615 /* Assets.xcassets */; };
+		7285A3981B4A086200CA0615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3961B4A086200CA0615 /* LaunchScreen.storyboard */; };
+		7285A3A31B4A086200CA0615 /* OpenMotionClassifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3A21B4A086200CA0615 /* OpenMotionClassifierTests.swift */; };
+		7285A3AE1B4A086200CA0615 /* OpenMotionClassifierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3AD1B4A086200CA0615 /* OpenMotionClassifierUITests.swift */; };
+		7285A3B31B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7285A3B21B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app */; };
+		7285A3B91B4A086200CA0615 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3B71B4A086200CA0615 /* Interface.storyboard */; };
+		7285A3BB1B4A086200CA0615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3BA1B4A086200CA0615 /* Assets.xcassets */; };
+		7285A3C21B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7285A3C11B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7285A3C91B4A086200CA0615 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3C81B4A086200CA0615 /* InterfaceController.swift */; };
+		7285A3CB1B4A086200CA0615 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3CA1B4A086200CA0615 /* ExtensionDelegate.swift */; };
+		7285A3CD1B4A086200CA0615 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3CC1B4A086200CA0615 /* NotificationController.swift */; };
+		7285A3CF1B4A086200CA0615 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3CE1B4A086200CA0615 /* GlanceController.swift */; };
+		7285A3D11B4A086200CA0615 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3D01B4A086200CA0615 /* ComplicationController.swift */; };
+		7285A3D31B4A086200CA0615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7285A3D21B4A086200CA0615 /* Assets.xcassets */; };
+		72CDE9321B4BB45100BF96F0 /* AccelerometerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285A3E81B4A554400CA0615 /* AccelerometerController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7285A39F1B4A086200CA0615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285A3821B4A086200CA0615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7285A3891B4A086200CA0615;
+			remoteInfo = OpenMotionClassifier;
+		};
+		7285A3AA1B4A086200CA0615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285A3821B4A086200CA0615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7285A3891B4A086200CA0615;
+			remoteInfo = OpenMotionClassifier;
+		};
+		7285A3B41B4A086200CA0615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285A3821B4A086200CA0615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7285A3B11B4A086200CA0615;
+			remoteInfo = "OpenMotionClassifier WatchKit App";
+		};
+		7285A3C31B4A086200CA0615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7285A3821B4A086200CA0615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7285A3C01B4A086200CA0615;
+			remoteInfo = "OpenMotionClassifier WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7285A3DA1B4A086200CA0615 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7285A3C21B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3DE1B4A086200CA0615 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7285A3B31B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7285A38A1B4A086200CA0615 /* OpenMotionClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMotionClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285A38D1B4A086200CA0615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7285A38F1B4A086200CA0615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7285A3921B4A086200CA0615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7285A3941B4A086200CA0615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7285A3971B4A086200CA0615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7285A3991B4A086200CA0615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7285A39E1B4A086200CA0615 /* OpenMotionClassifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenMotionClassifierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285A3A21B4A086200CA0615 /* OpenMotionClassifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMotionClassifierTests.swift; sourceTree = "<group>"; };
+		7285A3A41B4A086200CA0615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7285A3A91B4A086200CA0615 /* OpenMotionClassifierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenMotionClassifierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285A3AD1B4A086200CA0615 /* OpenMotionClassifierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMotionClassifierUITests.swift; sourceTree = "<group>"; };
+		7285A3AF1B4A086200CA0615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7285A3B21B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenMotionClassifier WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285A3B81B4A086200CA0615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7285A3BA1B4A086200CA0615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7285A3BC1B4A086200CA0615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7285A3C11B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMotionClassifier WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7285A3C71B4A086200CA0615 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		7285A3C81B4A086200CA0615 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		7285A3CA1B4A086200CA0615 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		7285A3CC1B4A086200CA0615 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		7285A3CE1B4A086200CA0615 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		7285A3D01B4A086200CA0615 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		7285A3D21B4A086200CA0615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7285A3D41B4A086200CA0615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7285A3E81B4A554400CA0615 /* AccelerometerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccelerometerController.swift; path = ../OpenMotionClassifier/AccelerometerController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7285A3871B4A086200CA0615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A39B1B4A086200CA0615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3A61B4A086200CA0615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3BE1B4A086200CA0615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7285A3811B4A086200CA0615 = {
+			isa = PBXGroup;
+			children = (
+				7285A38C1B4A086200CA0615 /* OpenMotionClassifier */,
+				7285A3A11B4A086200CA0615 /* OpenMotionClassifierTests */,
+				7285A3AC1B4A086200CA0615 /* OpenMotionClassifierUITests */,
+				7285A3B61B4A086200CA0615 /* OpenMotionClassifier WatchKit App */,
+				7285A3C51B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension */,
+				7285A38B1B4A086200CA0615 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7285A38B1B4A086200CA0615 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7285A38A1B4A086200CA0615 /* OpenMotionClassifier.app */,
+				7285A39E1B4A086200CA0615 /* OpenMotionClassifierTests.xctest */,
+				7285A3A91B4A086200CA0615 /* OpenMotionClassifierUITests.xctest */,
+				7285A3B21B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app */,
+				7285A3C11B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7285A38C1B4A086200CA0615 /* OpenMotionClassifier */ = {
+			isa = PBXGroup;
+			children = (
+				7285A38D1B4A086200CA0615 /* AppDelegate.swift */,
+				7285A38F1B4A086200CA0615 /* ViewController.swift */,
+				7285A3911B4A086200CA0615 /* Main.storyboard */,
+				7285A3941B4A086200CA0615 /* Assets.xcassets */,
+				7285A3961B4A086200CA0615 /* LaunchScreen.storyboard */,
+				7285A3991B4A086200CA0615 /* Info.plist */,
+			);
+			path = OpenMotionClassifier;
+			sourceTree = "<group>";
+		};
+		7285A3A11B4A086200CA0615 /* OpenMotionClassifierTests */ = {
+			isa = PBXGroup;
+			children = (
+				7285A3A21B4A086200CA0615 /* OpenMotionClassifierTests.swift */,
+				7285A3A41B4A086200CA0615 /* Info.plist */,
+			);
+			path = OpenMotionClassifierTests;
+			sourceTree = "<group>";
+		};
+		7285A3AC1B4A086200CA0615 /* OpenMotionClassifierUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7285A3AD1B4A086200CA0615 /* OpenMotionClassifierUITests.swift */,
+				7285A3AF1B4A086200CA0615 /* Info.plist */,
+			);
+			path = OpenMotionClassifierUITests;
+			sourceTree = "<group>";
+		};
+		7285A3B61B4A086200CA0615 /* OpenMotionClassifier WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7285A3B71B4A086200CA0615 /* Interface.storyboard */,
+				7285A3BA1B4A086200CA0615 /* Assets.xcassets */,
+				7285A3BC1B4A086200CA0615 /* Info.plist */,
+			);
+			path = "OpenMotionClassifier WatchKit App";
+			sourceTree = "<group>";
+		};
+		7285A3C51B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7285A3E81B4A554400CA0615 /* AccelerometerController.swift */,
+				7285A3C81B4A086200CA0615 /* InterfaceController.swift */,
+				7285A3CA1B4A086200CA0615 /* ExtensionDelegate.swift */,
+				7285A3CC1B4A086200CA0615 /* NotificationController.swift */,
+				7285A3CE1B4A086200CA0615 /* GlanceController.swift */,
+				7285A3D01B4A086200CA0615 /* ComplicationController.swift */,
+				7285A3D21B4A086200CA0615 /* Assets.xcassets */,
+				7285A3D41B4A086200CA0615 /* Info.plist */,
+				7285A3C61B4A086200CA0615 /* Supporting Files */,
+			);
+			path = "OpenMotionClassifier WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7285A3C61B4A086200CA0615 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7285A3C71B4A086200CA0615 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7285A3891B4A086200CA0615 /* OpenMotionClassifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285A3DF1B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier" */;
+			buildPhases = (
+				7285A3861B4A086200CA0615 /* Sources */,
+				7285A3871B4A086200CA0615 /* Frameworks */,
+				7285A3881B4A086200CA0615 /* Resources */,
+				7285A3DE1B4A086200CA0615 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7285A3B51B4A086200CA0615 /* PBXTargetDependency */,
+			);
+			name = OpenMotionClassifier;
+			productName = OpenMotionClassifier;
+			productReference = 7285A38A1B4A086200CA0615 /* OpenMotionClassifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7285A39D1B4A086200CA0615 /* OpenMotionClassifierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285A3E21B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifierTests" */;
+			buildPhases = (
+				7285A39A1B4A086200CA0615 /* Sources */,
+				7285A39B1B4A086200CA0615 /* Frameworks */,
+				7285A39C1B4A086200CA0615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7285A3A01B4A086200CA0615 /* PBXTargetDependency */,
+			);
+			name = OpenMotionClassifierTests;
+			productName = OpenMotionClassifierTests;
+			productReference = 7285A39E1B4A086200CA0615 /* OpenMotionClassifierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7285A3A81B4A086200CA0615 /* OpenMotionClassifierUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285A3E51B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifierUITests" */;
+			buildPhases = (
+				7285A3A51B4A086200CA0615 /* Sources */,
+				7285A3A61B4A086200CA0615 /* Frameworks */,
+				7285A3A71B4A086200CA0615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7285A3AB1B4A086200CA0615 /* PBXTargetDependency */,
+			);
+			name = OpenMotionClassifierUITests;
+			productName = OpenMotionClassifierUITests;
+			productReference = 7285A3A91B4A086200CA0615 /* OpenMotionClassifierUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7285A3B11B4A086200CA0615 /* OpenMotionClassifier WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285A3DB1B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier WatchKit App" */;
+			buildPhases = (
+				7285A3B01B4A086200CA0615 /* Resources */,
+				7285A3DA1B4A086200CA0615 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7285A3C41B4A086200CA0615 /* PBXTargetDependency */,
+			);
+			name = "OpenMotionClassifier WatchKit App";
+			productName = "OpenMotionClassifier WatchKit App";
+			productReference = 7285A3B21B4A086200CA0615 /* OpenMotionClassifier WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		7285A3C01B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7285A3D71B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier WatchKit Extension" */;
+			buildPhases = (
+				7285A3BD1B4A086200CA0615 /* Sources */,
+				7285A3BE1B4A086200CA0615 /* Frameworks */,
+				7285A3BF1B4A086200CA0615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenMotionClassifier WatchKit Extension";
+			productName = "OpenMotionClassifier WatchKit Extension";
+			productReference = 7285A3C11B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7285A3821B4A086200CA0615 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = salsicha;
+				TargetAttributes = {
+					7285A3891B4A086200CA0615 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7285A39D1B4A086200CA0615 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7285A3891B4A086200CA0615;
+					};
+					7285A3A81B4A086200CA0615 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7285A3891B4A086200CA0615;
+					};
+					7285A3B11B4A086200CA0615 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7285A3C01B4A086200CA0615 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 7285A3851B4A086200CA0615 /* Build configuration list for PBXProject "OpenMotionClassifier" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7285A3811B4A086200CA0615;
+			productRefGroup = 7285A38B1B4A086200CA0615 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7285A3891B4A086200CA0615 /* OpenMotionClassifier */,
+				7285A39D1B4A086200CA0615 /* OpenMotionClassifierTests */,
+				7285A3A81B4A086200CA0615 /* OpenMotionClassifierUITests */,
+				7285A3B11B4A086200CA0615 /* OpenMotionClassifier WatchKit App */,
+				7285A3C01B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7285A3881B4A086200CA0615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3981B4A086200CA0615 /* LaunchScreen.storyboard in Resources */,
+				7285A3951B4A086200CA0615 /* Assets.xcassets in Resources */,
+				7285A3931B4A086200CA0615 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A39C1B4A086200CA0615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3A71B4A086200CA0615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3B01B4A086200CA0615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3BB1B4A086200CA0615 /* Assets.xcassets in Resources */,
+				7285A3B91B4A086200CA0615 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3BF1B4A086200CA0615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3D31B4A086200CA0615 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7285A3861B4A086200CA0615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3901B4A086200CA0615 /* ViewController.swift in Sources */,
+				7285A38E1B4A086200CA0615 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A39A1B4A086200CA0615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3A31B4A086200CA0615 /* OpenMotionClassifierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3A51B4A086200CA0615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3AE1B4A086200CA0615 /* OpenMotionClassifierUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7285A3BD1B4A086200CA0615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7285A3CD1B4A086200CA0615 /* NotificationController.swift in Sources */,
+				72CDE9321B4BB45100BF96F0 /* AccelerometerController.swift in Sources */,
+				7285A3CB1B4A086200CA0615 /* ExtensionDelegate.swift in Sources */,
+				7285A3D11B4A086200CA0615 /* ComplicationController.swift in Sources */,
+				7285A3C91B4A086200CA0615 /* InterfaceController.swift in Sources */,
+				7285A3CF1B4A086200CA0615 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7285A3A01B4A086200CA0615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7285A3891B4A086200CA0615 /* OpenMotionClassifier */;
+			targetProxy = 7285A39F1B4A086200CA0615 /* PBXContainerItemProxy */;
+		};
+		7285A3AB1B4A086200CA0615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7285A3891B4A086200CA0615 /* OpenMotionClassifier */;
+			targetProxy = 7285A3AA1B4A086200CA0615 /* PBXContainerItemProxy */;
+		};
+		7285A3B51B4A086200CA0615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7285A3B11B4A086200CA0615 /* OpenMotionClassifier WatchKit App */;
+			targetProxy = 7285A3B41B4A086200CA0615 /* PBXContainerItemProxy */;
+		};
+		7285A3C41B4A086200CA0615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7285A3C01B4A086200CA0615 /* OpenMotionClassifier WatchKit Extension */;
+			targetProxy = 7285A3C31B4A086200CA0615 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7285A3911B4A086200CA0615 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7285A3921B4A086200CA0615 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7285A3961B4A086200CA0615 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7285A3971B4A086200CA0615 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7285A3B71B4A086200CA0615 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7285A3B81B4A086200CA0615 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7285A3D51B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7285A3D61B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7285A3D81B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "OpenMotionClassifier WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7285A3D91B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "OpenMotionClassifier WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		7285A3DC1B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = OpenMotionClassifier_WatchKit_Extension;
+				INFOPLIST_FILE = "OpenMotionClassifier WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		7285A3DD1B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = OpenMotionClassifier_WatchKit_Extension;
+				INFOPLIST_FILE = "OpenMotionClassifier WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		7285A3E01B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenMotionClassifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7285A3E11B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenMotionClassifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7285A3E31B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenMotionClassifierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenMotionClassifier.app/OpenMotionClassifier";
+			};
+			name = Debug;
+		};
+		7285A3E41B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenMotionClassifierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenMotionClassifier.app/OpenMotionClassifier";
+			};
+			name = Release;
+		};
+		7285A3E61B4A086200CA0615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenMotionClassifierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenMotionClassifier;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7285A3E71B4A086200CA0615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenMotionClassifierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = salsicha.OpenMotionClassifierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenMotionClassifier;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7285A3851B4A086200CA0615 /* Build configuration list for PBXProject "OpenMotionClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3D51B4A086200CA0615 /* Debug */,
+				7285A3D61B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285A3D71B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3D81B4A086200CA0615 /* Debug */,
+				7285A3D91B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285A3DB1B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3DC1B4A086200CA0615 /* Debug */,
+				7285A3DD1B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285A3DF1B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3E01B4A086200CA0615 /* Debug */,
+				7285A3E11B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285A3E21B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3E31B4A086200CA0615 /* Debug */,
+				7285A3E41B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7285A3E51B4A086200CA0615 /* Build configuration list for PBXNativeTarget "OpenMotionClassifierUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7285A3E61B4A086200CA0615 /* Debug */,
+				7285A3E71B4A086200CA0615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7285A3821B4A086200CA0615 /* Project object */;
+}
