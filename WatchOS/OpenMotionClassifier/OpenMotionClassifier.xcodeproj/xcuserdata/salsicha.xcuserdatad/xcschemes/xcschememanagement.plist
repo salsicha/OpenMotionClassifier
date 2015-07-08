@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Complication - OpenMotionClassifier WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Glance - OpenMotionClassifier WatchKit App.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>Notification - OpenMotionClassifier WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,27 +22,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7285A3891B4A086200CA0615</key>
+		<key>7263108D1B4DB9FB00BDBB8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7285A39D1B4A086200CA0615</key>
+		<key>726310A11B4DB9FB00BDBB8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7285A3A81B4A086200CA0615</key>
+		<key>726310AC1B4DB9FB00BDBB8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7285A3B11B4A086200CA0615</key>
+		<key>726310B51B4DB9FB00BDBB8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7285A3C01B4A086200CA0615</key>
+		<key>726310C41B4DB9FB00BDBB8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

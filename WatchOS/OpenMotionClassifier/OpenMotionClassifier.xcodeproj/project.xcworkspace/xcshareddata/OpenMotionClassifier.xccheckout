@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6C2B025B-64E0-40D2-A183-F4E0CAC09582</string>
+	<string>0349C2D3-92BC-4B0A-AB18-E349F5CF6A7C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>OpenMotionClassifier</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1B3849D45E79705631B229FC278F672DA75BE63E</key>
 		<string>github.com:salsicha/OpenMotionClassifier.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WatchOS/OpenMotionClassifier/OpenMotionClassifier.xcodeproj/project.xcworkspace</string>
+	<string>WatchOS/OpenMotionClassifier/OpenMotionClassifier.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1B3849D45E79705631B229FC278F672DA75BE63E</key>

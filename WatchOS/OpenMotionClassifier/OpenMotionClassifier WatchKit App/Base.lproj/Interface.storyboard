@@ -1,84 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc" defaultGlanceController="0uZ-2p-rRc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
     </dependencies>
     <scenes>
-        <!--Accelerometer-->
+        <!--Accelerometer Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="Accelerometer" id="AgC-eL-Hgc" customClass="AccelerometerController" customModule="OpenMotionClassifier_WatchKit_Extension">
+                <controller id="AgC-eL-Hgc" customClass="AccelerometerController" customModule="OpenMotionClassifier_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="ICA-Wn-6OG">
+                        <group width="1" alignment="left" id="JKn-qo-5Pi">
                             <items>
-                                <label alignment="left" text="x" id="7d1-6b-RbM">
+                                <label alignment="left" text="x" id="cXc-XY-Nke">
                                     <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                 </label>
-                                <label alignment="right" text="Label" textAlignment="right" id="973-ue-i6r"/>
+                                <label alignment="right" text="Label" textAlignment="right" id="5lE-UA-myg"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="sJk-a8-qUl">
+                        <group width="1" alignment="left" id="Bzo-hO-tBc">
                             <items>
-                                <label alignment="left" text="y" id="KRb-wB-q4H">
+                                <label alignment="left" text="y" id="Ofl-6o-g9A">
                                     <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                 </label>
-                                <label alignment="right" text="Label" textAlignment="right" id="TXq-W0-fDA"/>
+                                <label alignment="right" text="Label" textAlignment="right" id="r59-rR-2Kj"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="o4m-2Y-2Qi">
+                        <group width="1" alignment="left" id="XXD-Si-Yl0">
                             <items>
-                                <label alignment="left" text="z" id="wMe-nO-7Sx">
+                                <label alignment="left" text="z" id="1bL-jY-0bB">
                                     <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
                                 </label>
-                                <label alignment="right" text="Label" textAlignment="right" id="S5K-pg-hWf"/>
+                                <label alignment="right" text="Label" textAlignment="right" id="QIi-MY-oLu"/>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="labelX" destination="7d1-6b-RbM" id="SMs-8p-Bxg"/>
-                        <outlet property="labelY" destination="KRb-wB-q4H" id="ZHG-8I-eyv"/>
-                        <outlet property="labelZ" destination="wMe-nO-7Sx" id="Ni6-FO-ire"/>
+                        <outlet property="labelX" destination="cXc-XY-Nke" id="uVt-jc-5Qv"/>
+                        <outlet property="labelY" destination="Ofl-6o-g9A" id="Cc3-a5-soo"/>
+                        <outlet property="labelZ" destination="1bL-jY-0bB" id="cbB-nV-Jvr"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="OpenMotionClassifier_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="235" y="672"/>
+            <point key="canvasLocation" x="220" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
-                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="235" y="1001"/>
+            <point key="canvasLocation" x="220" y="643"/>
         </scene>
         <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
+        <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="OpenMotionClassifier_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="OpenMotionClassifier_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
+            <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
 </document>

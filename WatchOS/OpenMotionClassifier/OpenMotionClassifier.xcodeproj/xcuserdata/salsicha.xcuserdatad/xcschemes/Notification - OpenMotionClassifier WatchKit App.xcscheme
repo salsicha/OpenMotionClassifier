@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+               BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
                BuildableName = "OpenMotionClassifier WatchKit App.app"
                BlueprintName = "OpenMotionClassifier WatchKit App"
                ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7285A3891B4A086200CA0615"
+               BlueprintIdentifier = "7263108D1B4DB9FB00BDBB8F"
                BuildableName = "OpenMotionClassifier.app"
                BlueprintName = "OpenMotionClassifier"
                ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7285A3C01B4A086200CA0615"
+               BlueprintIdentifier = "726310C41B4DB9FB00BDBB8F"
                BuildableName = "OpenMotionClassifier WatchKit Extension.appex"
                BlueprintName = "OpenMotionClassifier WatchKit Extension"
                ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+            BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
             BuildableName = "OpenMotionClassifier WatchKit App.app"
             BlueprintName = "OpenMotionClassifier WatchKit App"
             ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -87,7 +87,7 @@
          RemotePath = "/OpenMotionClassifier WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+            BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
             BuildableName = "OpenMotionClassifier WatchKit App.app"
             BlueprintName = "OpenMotionClassifier WatchKit App"
             ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -96,7 +96,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+            BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
             BuildableName = "OpenMotionClassifier WatchKit App.app"
             BlueprintName = "OpenMotionClassifier WatchKit App"
             ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -119,7 +119,7 @@
          RemotePath = "/OpenMotionClassifier WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+            BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
             BuildableName = "OpenMotionClassifier WatchKit App.app"
             BlueprintName = "OpenMotionClassifier WatchKit App"
             ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">
@@ -128,7 +128,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7285A3B11B4A086200CA0615"
+            BlueprintIdentifier = "726310B51B4DB9FB00BDBB8F"
             BuildableName = "OpenMotionClassifier WatchKit App.app"
             BlueprintName = "OpenMotionClassifier WatchKit App"
             ReferencedContainer = "container:OpenMotionClassifier.xcodeproj">

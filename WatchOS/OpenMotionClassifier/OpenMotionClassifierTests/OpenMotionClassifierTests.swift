@@ -2,7 +2,7 @@
 //  OpenMotionClassifierTests.swift
 //  OpenMotionClassifierTests
 //
-//  Created by Alex Moran on 7/5/15.
+//  Created by Alex Moran on 7/8/15.
 //  Copyright © 2015 salsicha. All rights reserved.
 //
 
