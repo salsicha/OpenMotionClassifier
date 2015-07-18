@@ -30,38 +30,13 @@ class AccelerometerController: WKInterfaceController {
                 self.labelZ.setText(String(format: "%.2f", data!.acceleration.z))
                 
                 
-                // SAVE TO DISK
+                // TODO: open streaming connection and stream to phone
                 
-                // Option 1
-                
-//                let folder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-//                let path = folder.stringByAppendingPathComponent("votes")
-//                if let outputStream = NSOutputStream(toFileAtPath: path, append: true) {
-//                    outputStream.open()
-//                    let text = "some text"
-//                    
-//                    outputStream.write(text, maxLength: 0)
-//                    
-//                    outputStream.close()
-//                } else {
-//                    print("Unable to open file")
+//                if WCSession.isSupported() {
+//                    let session = WCSession.defaultSession()
+//                    session.delegate = self
+//                    session.activateSession()
 //                }
-                
-                // Option 2
-                
-//                let folder = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-//                let path = folder.stringByAppendingPathComponent("votes")
-//                let file: NSFileHandle? = NSFileHandle(forUpdatingAtPath: path)
-//                
-//                if file == nil {
-//                    print("File open failed")
-//                } else {
-//                    let data = ("black dog" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-//                    file?.seekToEndOfFile()
-//                    file?.writeData(data!)
-//                    file?.closeFile()
-//                }
-                
 
             }
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: handler)

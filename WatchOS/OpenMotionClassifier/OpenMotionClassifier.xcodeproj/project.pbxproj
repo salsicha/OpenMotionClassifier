@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72489B091B4FA7D5007414E9 /* LSTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72489B081B4FA7D5007414E9 /* LSTM.swift */; };
 		726310921B4DB9FB00BDBB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726310911B4DB9FB00BDBB8F /* AppDelegate.swift */; };
 		726310941B4DB9FB00BDBB8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726310931B4DB9FB00BDBB8F /* ViewController.swift */; };
 		726310971B4DB9FB00BDBB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726310951B4DB9FB00BDBB8F /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72489B081B4FA7D5007414E9 /* LSTM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSTM.swift; sourceTree = "<group>"; };
 		7263108E1B4DB9FB00BDBB8F /* OpenMotionClassifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMotionClassifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726310911B4DB9FB00BDBB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		726310931B4DB9FB00BDBB8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				7263109A1B4DB9FB00BDBB8F /* LaunchScreen.storyboard */,
 				7263109D1B4DB9FB00BDBB8F /* Info.plist */,
 				726310EA1B4DBADA00BDBB8F /* OpenMotionClassifier-Bridging-Header.h */,
+				72489B081B4FA7D5007414E9 /* LSTM.swift */,
 			);
 			path = OpenMotionClassifier;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726310ED1B4DBADB00BDBB8F /* Torch.m in Sources */,
+				72489B091B4FA7D5007414E9 /* LSTM.swift in Sources */,
 				726310941B4DB9FB00BDBB8F /* ViewController.swift in Sources */,
 				726310921B4DB9FB00BDBB8F /* AppDelegate.swift in Sources */,
 			);
