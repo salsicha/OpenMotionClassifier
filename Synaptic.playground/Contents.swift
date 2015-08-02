@@ -77,20 +77,74 @@ class Layer {
     
     var size:Int
     var list:[Int]
-    var label:String?
+    var label:String!
     
-    init(_ _size:Int, _ _label:String? = nil) {
+    init(_ _size:Int, _ _label:String! = nil) {
         size = _size
         list = []
         label = _label
     }
-
+    
+    // activates all the neurons in the layer
+    func activate() {
+        
+    }
+    
+    // propagates the error on all the neurons of the layer
+    func propagate() {
+        
+    }
+    
+    // projects a connection from this layer to another one
     func project(layer:Layer, _ type:Int = 0, _ weights:[Int] = [0]) {
         
         // TODO: needs functionality
         
     }
     
+    // gates a connection betwenn two layers
+    func gate() {
+    
+    }
+    
+    // true or false whether the whole layer is self-connected or not
+    func selfconnected() {
+    
+    }
+    
+    // true of false whether the layer is connected to another layer (parameter) or not
+    func connected() {
+    
+    }
+    
+    // clears all the neuorns in the layer
+    func clear() {
+    
+    }
+    
+    // resets all the neurons in the layer
+    func reset() {
+    
+    }
+    
+    // returns all the neurons in the layer (array)
+    func neurons() {
+    
+    }
+    
+    // adds a neuron to the layer
+    func add() {
+    
+    }
+    
+    func set() {
+    
+    }
+    
+    // represents a connection from one layer to another, and keeps track of its weight and gain
+    func connection() {
+    
+    }
 }
 
 class Network {
@@ -108,11 +162,67 @@ class Network {
     }
 
     var layers:NetworkLayers
-    var optimized:String?
+    var optimized:String!
     
     init() {
         layers = NetworkLayers(Layer(2), [Layer](), Layer(2))
         optimized = nil
+    }
+    
+    // feed-forward activation of all the layers to produce an ouput
+    func activate(input:[Double]) -> [Double] {
+        return input
+    }
+    
+    // back-propagate the error thru the network
+    func propagate(currentRate:Any, _ target:[Double]!) {
+//        var target:[Int]!
+//        var currentRate:Any
+    }
+    
+    // project a connection to another unit (either a network or a layer)
+    func project() {
+    
+    }
+    
+    // let this network gate a connection
+    func gate() {
+        
+    }
+    
+    // clear all elegibility traces and extended elegibility traces (the network forgets its context, but not what was trained)
+    func clear() {
+        
+    }
+    
+    // reset all weights and clear all traces (ends up like a new network)
+    func reset() {
+        
+    }
+    
+    // hardcodes the behaviour of the whole network into a single optimized function
+    func optimize() {
+        
+    }
+    
+    // restores all the values from the optimized network the their respective objects in order to manipulate the network
+    func restore() {
+    
+    }
+    
+    // returns all the neurons in the network
+    func neurons() {
+        
+    }
+    
+    // returns number of inputs of the network
+    func inputs() -> Int {
+        return layers.input.size
+    }
+    
+    // returns number of outputs of hte network
+    func outputs() -> Int {
+        return layers.output.size
     }
     
     // sets the layers of the network
@@ -127,31 +237,152 @@ class Network {
         }
     }
     
-    func inputs() -> Int {
-        return layers.input.size
+    func setOptimize() {
+        
     }
     
-    func outputs() -> Int {
-        return layers.output.size
+    // returns a json that represents all the neurons and connections of the network
+    func toJSON() {
+        
+    }
+
+    // export the topology into dot language which can be visualized as graphs using dot
+    /* example: ... console.log(net.toDotLang());
+    $ node example.js > example.dot
+    $ dot example.dot -Tpng > out.png
+    */
+    func toDot() {
+        
+    }
+    
+    // returns a function that works as the activation of the network and can be used without depending on the library
+    func standalone() {
+        
+    }
+    
+    func worker() {
+        
+    }
+    
+    // returns a copy of the network
+    func clone() {
+        
+    }
+    
+    // rebuild a network that has been stored in a json using the method toJSON()
+    func fromJSON() {
+        
     }
 }
 
 class Neuron {
+    
+    // activate the neuron
+    func activate() {
+        
+    }
+    
+    // back-propagate the error
+    func propagate() {
+        
+    }
+    
+    func project() {
+        
+    }
+    
+    func gate() {
+        
+    }
+    
+    // returns true or false whether the neuron is self-connected or not
+    func selfconnected() {
+        
+    }
+    
+    // returns true or false whether the neuron is connected to another neuron (parameter)
+    func connected() {
+        
+    }
+    
+    // clears all the traces (the neuron forgets it's context, but the connections remain intact)
+    func clear() {
+    
+    }
+    
+    // all the connections are randomized and the traces are cleared
+    func reset() {
+    
+    }
+    
+    // hardcodes the behaviour of the neuron into an optimized function
+    func optimize() {
+        
+    }
+    
+    // represents a connection between two neurons
+    func connection() {
+        
+    }
+    
+    // squashing functions
+    class Squash {
+        
+//        func LOGISTIC(x, derivate) {
+//            if !derivate {
+//                return 1 / (1 + Math.exp(-x))
+//            }
+//            var fx = LOGISTIC(x)
+//            return fx * (1 - fx)
+//        }
+        
+//        func TANH(x, derivate) {
+//            if derivate {
+//                return 1 - Math.pow(Neuron.squash.TANH(x), 2)
+//            var eP = Math.exp(x)
+//            var eN = 1 / eP
+//            return (eP - eN) / (eP + eN)
+//        }
+        
+//        func IDENTITY(x, derivate) {
+//            return derivate ? 1 : x;
+//        }
+        
+//        func HLIM(x, derivate) {
+//            return derivate ? 1 : +(x > 0)
+//        }
+        
+    }
+    
     
 }
 
 
 class Trainer {
     
-    struct Options {
-        var iterations:Int
-        var error:Double
-        var rate:Double
-        var cost:(([Double], [Double]) -> Double)?
-        var shuffle:Bool
-        var log:Bool
+    struct Schedule : NilLiteralConvertible {
         
-        init(iterations:Int = 100000, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)? = nil, shuffle:Bool = true, log:Bool = false) {
+        init(nilLiteral: ()) {}
+        
+        var every:Int!
+        func do(data: Options) -> Bool {
+            return true
+        }
+    }
+    
+    struct Options : NilLiteralConvertible {
+
+        init(nilLiteral: ()) {}
+        
+        var iterations:Int!
+        var error:Double!
+        var rate:Double!
+        var cost:(([Double], [Double]) -> Double)!
+        var shuffle:Bool!
+        var log:Bool!
+        var schedule:Schedule!
+        
+        init(iterations:Int = 100000, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)! = Cost.MSE(Trainer.Cost()), shuffle:Bool = true, log:Bool = false, schedule:Schedule = nil) {
             
             self.iterations = iterations
             self.error = error
@@ -159,91 +390,298 @@ class Trainer {
             self.cost = cost
             self.shuffle = shuffle
             self.log = log
-            
-//            let test = cost!(1.5, 2.5)
+            self.schedule = schedule
+        }
         
-//            print(test)
+        subscript(index:Int) -> Any {
+            
+            get {
+                switch index {
+                case 0:
+                    return self.iterations
+                case 1:
+                    return self.error
+                case 2:
+                    return self.rate
+                case 3:
+                    return self.cost
+                case 4:
+                    return self.shuffle
+                case 5:
+                    return self.log
+                case 6:
+                    return self.schedule
+                default:
+                    return 0
+                }
+            }
+            
+            set(newValue) {
+                switch index {
+                case 0:
+                    self.iterations = newValue as! Int
+                case 1:
+                    self.error = newValue as! Double
+                case 2:
+                    self.rate = newValue as! Double
+                case 3:
+//                    print(_stdlib_getDemangledTypeName(newValue))
+
+                    self.cost = newValue as! (([Double], [Double]) -> Double)
+                    
+                case 4:
+                    self.shuffle = newValue as! Bool
+                case 5:
+                    self.log = newValue as! Bool
+                case 6:
+                    self.schedule = newValue as! Schedule
+                default:
+                    print("error")
+                }
+            }
         }
     }
 
     var options:Options
     var network:Network
-    var rate:Double
+    var rate:Any
     var iterations:Int
     var error:Double
-    var cost:(([Double], [Double]) -> Double)?
+    var cost:(([Double], [Double]) -> Double)!
+    var schedule:Schedule!
     
-    init(_ _network:Network, _ _options:Options = Options()) {
-        options = _options
-        network = _network
-        rate = options.rate
-        iterations = options.iterations
-        error = options.error
-        cost = options.cost
+    init(_ network:Network, _ options:Options = nil) {
+        self.options = options
+        self.network = network
+        self.rate = options.rate
+        self.iterations = options.iterations
+        self.error = options.error
+        self.cost = options.cost
+        self.schedule = options.schedule
     }
     
-    func train(set:[Int], options:Options = Options()) {
+    // trains any given set to a network
+    func train(set:[[String:[Double]]], options:Options! = nil) {
 
-        // TODO: needs functionality
+        var error:Double = 1
+        var iterations:Int = 0
+        var bucketSize:Double = 0
+        var abort:Bool = false
+        var input:[Double]!
+        var output:[Double]!
+        var target:[Double]!
+        var currentRate:Any
         
+//        var cost = options && options.cost || this.cost || Trainer.cost.MSE
+        var cost = self.cost
+        
+        var start = NSDate()
+
+        if options != nil {
+            if options.shuffle != nil {
+                // ?
+                //function shuffle(o) { //v1.0
+                //    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+                //    return o;
+                //};
+            }
+            
+            if options.iterations != nil {
+                self.iterations = options.iterations
+            }
+            
+            if options.error != nil {
+                self.error = options.error
+            }
+            
+            if options.rate != nil {
+                self.rate = options.rate
+            }
+            
+            if options.cost != nil {
+                self.cost = options.cost
+            }
+            
+            if options.schedule != nil {
+                self.schedule = options.schedule
+            }
+        }
+        
+        currentRate = self.rate
+        
+//        if currentRate is [Double] {
+        if let _rate = self.rate as? [Double] {
+//            bucketSize = floor(self.iterations / Array(arrayLiteral: self.rate).count)
+            bucketSize = floor(Double(self.iterations) / Double(_rate.count))
+        }
+
+        
+        while !abort && iterations < self.iterations && error > self.error {
+            error = 0
+            
+            if bucketSize > 0 {
+//                if let _rate = self.rate as? Array<Double> {
+                if let _rate = self.rate as? [Double] {
+                    var currentBucket:Int = Int(floor(Double(iterations) / bucketSize))
+                    if currentBucket < _rate.count {
+                        currentRate = _rate[currentBucket] // || currentRate
+                    }
+                }
+            }
+            
+            for train in set {
+//                let _train = train as? Dictionary<String, Array<Int>>
+//                let _train = train as? [[String:[Int]]]
+
+//                input = set[train].input
+//                target = set[train].output
+                
+                input = train["input"]
+                target = train["output"]
+                
+                output = self.network.activate(input)
+                self.network.propagate(currentRate, target)
+                
+                print("errorss")
+                
+                error += cost(target, output)
+            }
+            
+            // check error
+            iterations++;
+            error /= Double(set.count);
+
+            if options != nil {
+                if self.schedule != nil && self.schedule.every != nil && iterations % self.schedule.every == 0 {
+
+//                    abort = this.schedule.do({
+//                        error: error,
+//                        iterations: iterations,
+//                        rate: currentRate
+//                    });
+                }
+                else if options.log && iterations % options.log == 0 {
+                    print("test")
+//                    console.log('iterations', iterations, 'error', error, 'rate', currentRate)
+                }
+//                if (options.shuffle) {
+//                    shuffle(set)
+//                }
+            }
+        }
+//
+//        var results = {
+//            error: error,
+//            iterations: iterations,
+//            time: Date.now() - start
+//        }
+//
+//        return results;
+        
+
     }
     
+    // tests a set and returns the error and elapsed time
     func test(set:[Int], options:Options = Options()) {
         
         // TODO: needs functionality
         
     }
     
+    // trains any given set to a network using a WebWorker
+    func workerTrain() {
+        
+    }
+    
+    // trains an XOR to the network
     func XOR(options:Options = Options()) {
 
-        if network.inputs() != 2 || network.outputs() != 1 {
+        if self.network.inputs() != 2 || self.network.outputs() != 1 {
             fatalError("Incompatible network (2 inputs, 1 output)")
         }
-        
-        var defaults:Options = Options(iterations: 100000, error: 0.005, rate: 0.2, cost: Trainer.cost_f.MSE(cost_f()), shuffle: true, log: false)
-        
-//        var test = cost_f.MSE(cost_f())
+
+//        let test = Cost.MSE(Cost())
 //        test([2.0], [3.0])
+        
+        var defaults:Options = Options(iterations: 100000, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: false)
+    
+        
+        for i in 0...5 {
+            defaults[i] = options[i];
+        }
 
         
         
-//        var defaults = {
-//            iterations: 100000,
-//            log: false,
-//            shuffle: true,
-//            cost: Trainer.cost.MSE
-//        }
-//        
-//        if (options)
-//        for (var i in options)
-//            defaults[i] = options[i];
-//        
+//        train
+//        (
+//            [
+//                { input: [0, 0], output: [0] },
+//                { input: [1, 0], output: [1] },
+//                { input: [0, 1], output: [1] },
+//                { input: [1, 1], output: [0] }
+//            ],
+//            defaults
+//        )
+
+        
 //        return this.train([{
 //            input: [0, 0],
 //            output: [0]
 //            }, {
-//                input: [1, 0],
-//                output: [1]
+//            input: [1, 0],
+//            output: [1]
 //            }, {
-//                input: [0, 1],
-//                output: [1]
+//            input: [0, 1],
+//            output: [1]
 //            }, {
-//                input: [1, 1],
-//                output: [0]
+//            input: [1, 1],
+//            output: [0]
 //            }], defaults);
+    
+    }
+    
+    // trains the network to pass a Distracted Sequence Recall test
+    func DSR() {
         
     }
     
-    class cost_f {
+    // train the network to learn an Embeded Reber Grammar
+    func ERG() {
+        
+    }
+    
+    func timingTask() {
+        
+    }
+    
+    func shuffle(o:[Double]) -> [Double] {
+//        for (var j, x, i = o.count; i; j = floor(arc4random() * i), x = o[--i], o[i] = o[j], o[j] = x)
+        return o
+    }
+    
+    class Cost {
+        func CROSS_ENTROPY(target:[Double], _ output:[Double]) -> Double {
+            var crossentropy:Double = 0
+            for i in 0..<output.count {
+//                crossentropy -= (target[i] * log(output[i]+1e-15)) + ((1-target[i]) * log((1+1e-15)-output[i]))
+            }
+            return crossentropy
+        }
+        
         func MSE(target:[Double], _ output:[Double]) -> Double {
-            
-            print("test")
-            
             var mse:Double = 0
-            for i in 0...output.count {
+            for i in 0..<output.count {
                 mse += pow(target[i] - output[i], 2)
             }
             return mse / Double(output.count)
+        }
+        
+        func BINARY(target:[Double], _ output:[Double]) -> Double {
+            var misses:Double = 0
+            for i in 0..<output.count {
+//                misses += round(target[i] * 2) != round(output[i] * 2)
+            }
+            return misses
         }
     }
 }
@@ -251,7 +689,21 @@ class Trainer {
 
 
 var perceptron = Architect.Perceptron(2, 3, 1);
-perceptron.trainer.XOR()
+perceptron.trainer.XOR(
+
+//    iterations: 3000,
+//    rate: 0.000001,
+//    error: 0.000001,
+//    schedule: {
+//        every: 1000,
+//        do: function(data) {
+//            if( data.iterations == 20000){
+//                return true
+//            }
+//        }
+//    }
+
+)
 
 
 //var test00 = Math.round(perceptron.activate([0, 0]));
