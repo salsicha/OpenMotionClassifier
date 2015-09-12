@@ -365,7 +365,7 @@ class Trainer {
         init(nilLiteral: ()) {}
         
         var every:Int!
-        func do(data: Options) -> Bool {
+        func do_f(data: Options) -> Bool {
             return true
         }
     }
@@ -379,10 +379,10 @@ class Trainer {
         var rate:Double!
         var cost:(([Double], [Double]) -> Double)!
         var shuffle:Bool!
-        var log:Bool!
+        var log:Int!
         var schedule:Schedule!
         
-        init(iterations:Int = 100000, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)! = Cost.MSE(Trainer.Cost()), shuffle:Bool = true, log:Bool = false, schedule:Schedule = nil) {
+        init(iterations:Int = 100000, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)! = Cost.MSE(Trainer.Cost()), shuffle:Bool = true, log:Int = 0, schedule:Schedule = nil) {
             
             self.iterations = iterations
             self.error = error
@@ -432,7 +432,7 @@ class Trainer {
                 case 4:
                     self.shuffle = newValue as! Bool
                 case 5:
-                    self.log = newValue as! Bool
+                    self.log = newValue as! Int
                 case 6:
                     self.schedule = newValue as! Schedule
                 default:
@@ -450,7 +450,8 @@ class Trainer {
     var cost:(([Double], [Double]) -> Double)!
     var schedule:Schedule!
     
-    init(_ network:Network, _ options:Options = nil) {
+//    init(_ network:Network, _ options:Options = nil) {
+    init(_ network:Network, _ options:Options = Options()) {
         self.options = options
         self.network = network
         self.rate = options.rate
@@ -461,8 +462,8 @@ class Trainer {
     }
     
     // trains any given set to a network
+//    func train(set:[[String:[Double]]], options:Options = Options()) {
     func train(set:[[String:[Double]]], options:Options! = nil) {
-
         var error:Double = 1
         var iterations:Int = 0
         var bucketSize:Double = 0
@@ -542,7 +543,7 @@ class Trainer {
                 output = self.network.activate(input)
                 self.network.propagate(currentRate, target)
                 
-                print("errorss")
+                print("errors")
                 
                 error += cost(target, output)
             }
@@ -553,17 +554,13 @@ class Trainer {
 
             if options != nil {
                 if self.schedule != nil && self.schedule.every != nil && iterations % self.schedule.every == 0 {
-
-//                    abort = this.schedule.do({
-//                        error: error,
-//                        iterations: iterations,
-//                        rate: currentRate
-//                    });
+                    abort = self.schedule.do_f( Options(error: error, iterations: iterations, rate: currentRate as! Double) )
+                } else if options.log != nil && iterations % options.log == 0 {
+                    print("iterations \(iterations) error \(error) rate \(currentRate)")
                 }
-                else if options.log && iterations % options.log == 0 {
-                    print("test")
-//                    console.log('iterations', iterations, 'error', error, 'rate', currentRate)
-                }
+                
+                print("test")
+                
 //                if (options.shuffle) {
 //                    shuffle(set)
 //                }
@@ -603,7 +600,7 @@ class Trainer {
 //        let test = Cost.MSE(Cost())
 //        test([2.0], [3.0])
         
-        var defaults:Options = Options(iterations: 100000, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: false)
+        var defaults:Options = Options(iterations: 100000, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: 0);
     
         
         for i in 0...5 {
@@ -687,8 +684,7 @@ class Trainer {
 }
 
 
-
-var perceptron = Architect.Perceptron(2, 3, 1);
+var perceptron = Architect.Perceptron(2, 3, 1)
 perceptron.trainer.XOR(
 
 //    iterations: 3000,
