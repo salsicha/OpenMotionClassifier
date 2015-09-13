@@ -86,7 +86,31 @@ class Layer {
     }
     
     // activates all the neurons in the layer
-    func activate() {
+    func activate(input:[Double]! = nil) -> Array<Double> {
+        
+        // TODO:needs functionality
+        
+//        var activations = [];
+//        
+//        if (typeof input != 'undefined') {
+//            if (input.length != this.size)
+//            throw new Error("INPUT size and LAYER size must be the same to activate!");
+//            
+//            for (var id in this.list) {
+//                var neuron = this.list[id];
+//                var activation = neuron.activate(input[id]);
+//                activations.push(activation);
+//            }
+//        } else {
+//            for (var id in this.list) {
+//                var neuron = this.list[id];
+//                var activation = neuron.activate();
+//                activations.push(activation);
+//            }
+//        }
+//        return activations;
+        
+        return [0]
         
     }
     
@@ -162,7 +186,7 @@ class Network {
     }
 
     var layers:NetworkLayers
-    var optimized:String!
+    var optimized:Bool!
     
     init() {
         layers = NetworkLayers(Layer(2), [Layer](), Layer(2))
@@ -171,13 +195,32 @@ class Network {
     
     // feed-forward activation of all the layers to produce an ouput
     func activate(input:[Double]) -> [Double] {
-        return input
+        
+        if self.optimized == false {
+            self.layers.input.activate(input)
+            for layer in self.layers.hidden {
+                layer.activate()
+            }
+            return self.layers.output.activate()
+        }
+        
+        if self.optimized == nil {
+            self.optimize()
+        }
+
+        // I just made optimize a bool
+        // it has to be an optional
+        
+        return self.optimized.activate(input)
     }
     
     // back-propagate the error thru the network
     func propagate(currentRate:Any, _ target:[Double]!) {
 //        var target:[Int]!
 //        var currentRate:Any
+        
+        // TODO: here
+        
     }
     
     // project a connection to another unit (either a network or a layer)
@@ -382,7 +425,9 @@ class Trainer {
         var log:Int!
         var schedule:Schedule!
         
-        init(iterations:Int = 100000, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)! = Cost.MSE(Trainer.Cost()), shuffle:Bool = true, log:Int = 0, schedule:Schedule = nil) {
+        // iterations: 100000
+        
+        init(iterations:Int = 10, error:Double = 0.005, rate:Double = 0.2, cost:(([Double], [Double]) -> Double)! = Cost.MSE(Trainer.Cost()), shuffle:Bool = true, log:Int = 0, schedule:Schedule = nil) {
             
             self.iterations = iterations
             self.error = error
@@ -463,7 +508,7 @@ class Trainer {
     
     // trains any given set to a network
 //    func train(set:[[String:[Double]]], options:Options = Options()) {
-    func train(set:[[String:[Double]]], options:Options! = nil) {
+    func train(set:[[String:[Double]]], options:Options! = nil) -> Dictionary<String, Any> {
         var error:Double = 1
         var iterations:Int = 0
         var bucketSize:Double = 0
@@ -476,7 +521,7 @@ class Trainer {
 //        var cost = options && options.cost || this.cost || Trainer.cost.MSE
         var cost = self.cost
         
-        var start = NSDate()
+        var start:Int = Int(NSDate().timeIntervalSince1970)
 
         if options != nil {
             if options.shuffle != nil {
@@ -555,33 +600,54 @@ class Trainer {
             if options != nil {
                 if self.schedule != nil && self.schedule.every != nil && iterations % self.schedule.every == 0 {
                     abort = self.schedule.do_f( Options(error: error, iterations: iterations, rate: currentRate as! Double) )
-                } else if options.log != nil && iterations % options.log == 0 {
+                } else if options.log != nil && Double(iterations) % Double(options.log) == 0 {
                     print("iterations \(iterations) error \(error) rate \(currentRate)")
                 }
                 
-                print("test")
-                
-//                if (options.shuffle) {
-//                    shuffle(set)
-//                }
+                if options.shuffle != nil {
+                    shuffle(set)
+                }
             }
         }
-//
-//        var results = {
-//            error: error,
-//            iterations: iterations,
-//            time: Date.now() - start
-//        }
-//
-//        return results;
-        
 
+        let time_delta:Int = Int(NSDate().timeIntervalSince1970) - start
+        
+        let results:Dictionary<String, Any> = [
+            "error": error,
+            "iterations": iterations,
+            "time": time_delta
+        ]
+
+        return results
     }
     
     // tests a set and returns the error and elapsed time
     func test(set:[Int], options:Options = Options()) {
         
         // TODO: needs functionality
+        
+//        var error = 0;
+//        var abort = false;
+//        var input, output, target;
+//        var cost = options && options.cost || this.cost || Trainer.cost.MSE;
+//        
+//        var start = Date.now();
+//        
+//        for (var test in set) {
+//            input = set[test].input;
+//            target = set[test].output;
+//            output = this.network.activate(input);
+//            error += cost(target, output);
+//        }
+//        
+//        error /= set.length;
+//        
+//        var results = {
+//            error: error,
+//            time: Date.now() - start
+//        }
+//        
+//        return results;
         
     }
     
@@ -591,7 +657,7 @@ class Trainer {
     }
     
     // trains an XOR to the network
-    func XOR(options:Options = Options()) {
+    func XOR(options:Options = Options()) -> Dictionary<String, Any> {
 
         if self.network.inputs() != 2 || self.network.outputs() != 1 {
             fatalError("Incompatible network (2 inputs, 1 output)")
@@ -600,40 +666,28 @@ class Trainer {
 //        let test = Cost.MSE(Cost())
 //        test([2.0], [3.0])
         
-        var defaults:Options = Options(iterations: 100000, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: 0);
+        // iterations: 100000
+        
+        var defaults:Options = Options(iterations: 10, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: 0);
     
         
         for i in 0...5 {
             defaults[i] = options[i];
         }
-
         
-        
-//        train
-//        (
-//            [
-//                { input: [0, 0], output: [0] },
-//                { input: [1, 0], output: [1] },
-//                { input: [0, 1], output: [1] },
-//                { input: [1, 1], output: [0] }
-//            ],
-//            defaults
-//        )
-
-        
-//        return this.train([{
-//            input: [0, 0],
-//            output: [0]
-//            }, {
-//            input: [1, 0],
-//            output: [1]
-//            }, {
-//            input: [0, 1],
-//            output: [1]
-//            }, {
-//            input: [1, 1],
-//            output: [0]
-//            }], defaults);
+        return self.train([[
+            "input": [0, 0],
+            "output": [0]
+            ], [
+            "input": [1, 0],
+            "output": [1]
+            ], [
+            "input": [0, 1],
+            "output": [1]
+            ], [
+            "input": [1, 1],
+            "output": [0]
+            ]], options: defaults);
     
     }
     
@@ -651,8 +705,18 @@ class Trainer {
         
     }
     
-    func shuffle(o:[Double]) -> [Double] {
-//        for (var j, x, i = o.count; i; j = floor(arc4random() * i), x = o[--i], o[i] = o[j], o[j] = x)
+    func shuffle<T>(var o:[T]) -> [T] {
+        
+        var j:Int
+        var x:T
+        
+        for var i = 0; i < o.count; i++ {
+            j = Int(arc4random_uniform(UInt32(o.count)))
+            x = o[i]
+            o[i] = o[j]
+            o[j] = x
+        }
+        
         return o
     }
     
