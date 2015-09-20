@@ -184,9 +184,12 @@ class Network {
             output = _output
         }
     }
+    
+    // TODO: optimized is a HARDCODED NETWORK
+    // see hardcoding below
 
     var layers:NetworkLayers
-    var optimized:Bool!
+    var optimized:OptimizedNetwork!
     
     init() {
         layers = NetworkLayers(Layer(2), [Layer](), Layer(2))
@@ -207,9 +210,6 @@ class Network {
         if self.optimized == nil {
             self.optimize()
         }
-
-        // I just made optimize a bool
-        // it has to be an optional
         
         return self.optimized.activate(input)
     }
@@ -245,6 +245,82 @@ class Network {
     
     // hardcodes the behaviour of the whole network into a single optimized function
     func optimize() {
+        
+        var that = this;
+        var optimized = {};
+        var neurons = this.neurons();
+        
+        for (var i in neurons) {
+            var neuron = neurons[i].neuron;
+            var layer = neurons[i].layer;
+            while (neuron.neuron)
+            neuron = neuron.neuron;
+            optimized = neuron.optimize(optimized, layer);
+        }
+        for (var i in optimized.propagation_sentences)
+            optimized.propagation_sentences[i].reverse();
+        optimized.propagation_sentences.reverse();
+        
+        var hardcode = "";
+        hardcode += "var F = Float64Array ? new Float64Array(" + optimized.memory +
+        ") : []; ";
+        for (var i in optimized.variables)
+            hardcode += "F[" + optimized.variables[i].id + "] = " + (optimized.variables[
+            i].value || 0) + "; ";
+        hardcode += "var activate = function(input){\n";
+        for (var i in optimized.inputs)
+            hardcode += "F[" + optimized.inputs[i] + "] = input[" + i + "]; ";
+        for (var currentLayer in optimized.activation_sentences) {
+            if (optimized.activation_sentences[currentLayer].length > 0) {
+                for (var currentNeuron in optimized.activation_sentences[currentLayer]) {
+                    hardcode += optimized.activation_sentences[currentLayer][currentNeuron].join(" ");
+                    hardcode += optimized.trace_sentences[currentLayer][currentNeuron].join(" ");
+                }
+            }
+        }
+        hardcode += " var output = []; "
+        for (var i in optimized.outputs)
+            hardcode += "output[" + i + "] = F[" + optimized.outputs[i] + "]; ";
+        hardcode += "return output; }; "
+        hardcode += "var propagate = function(rate, target){\n";
+        hardcode += "F[" + optimized.variables.rate.id + "] = rate; ";
+        for (var i in optimized.targets)
+            hardcode += "F[" + optimized.targets[i] + "] = target[" + i + "]; ";
+        for (var currentLayer in optimized.propagation_sentences)
+        for (var currentNeuron in optimized.propagation_sentences[currentLayer])
+            hardcode += optimized.propagation_sentences[currentLayer][currentNeuron].join(" ") + " ";
+        hardcode += " };\n";
+        hardcode +=
+        "var ownership = function(memoryBuffer){\nF = memoryBuffer;\nthis.memory = F;\n};\n";
+        hardcode +=
+        "return {\nmemory: F,\nactivate: activate,\npropagate: propagate,\nownership: ownership\n};";
+        hardcode = hardcode.split(";").join(";\n");
+        
+        var constructor = new Function(hardcode);
+        
+        var network = constructor();
+        network.data = {
+            variables: optimized.variables,
+            activate: optimized.activation_sentences,
+            propagate: optimized.propagation_sentences,
+            trace: optimized.trace_sentences,
+            inputs: optimized.inputs,
+            outputs: optimized.outputs,
+            check_activation: this.activate,
+            check_propagation: this.propagate
+        }
+        
+        network.reset = function() {
+            if (that.optimized) {
+                that.optimized = null;
+                that.activate = network.data.check_activation;
+                that.propagate = network.data.check_propagation;
+            }
+        }
+        
+        this.optimized = network;
+        this.activate = network.activate;
+        this.propagate = network.propagate;
         
     }
     
@@ -321,8 +397,11 @@ class Network {
 class Neuron {
     
     // activate the neuron
-    func activate() {
+    func activate(input:Array<Double>) -> Array<Double> {
         
+        // TODO: return value is a placeholder
+        
+        return [0]
     }
     
     // back-propagate the error
