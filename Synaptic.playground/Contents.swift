@@ -189,7 +189,8 @@ class Network {
     // see hardcoding below
 
     var layers:NetworkLayers
-    var optimized:OptimizedNetwork!
+//    var optimized:OptimizedNetwork!
+    var optimized:Bool? = false
     
     init() {
         layers = NetworkLayers(Layer(2), [Layer](), Layer(2))
@@ -198,20 +199,23 @@ class Network {
     
     // feed-forward activation of all the layers to produce an ouput
     func activate(input:[Double]) -> [Double] {
+
+        // TODO: Disableing optimized for now
+        // enable optimization as a flag and turn back
         
-        if self.optimized == false {
+//        if self.optimized == false {
             self.layers.input.activate(input)
             for layer in self.layers.hidden {
                 layer.activate()
             }
             return self.layers.output.activate()
-        }
-        
-        if self.optimized == nil {
-            self.optimize()
-        }
-        
-        return self.optimized.activate(input)
+//        }
+//        
+//        if self.optimized == nil {
+//            self.optimize()
+//        }
+//        
+//        return self.optimized.activate(input)
     }
     
     // back-propagate the error thru the network
@@ -243,9 +247,14 @@ class Network {
         
     }
     
+    // Disable optimization for now
+    // Eventually add the optimizations to the unoptimized functions
+    // triggered by an optimize flag
+    
     // hardcodes the behaviour of the whole network into a single optimized function
     func optimize() {
         
+        /*
         var that = this;
         var optimized = {};
         var neurons = this.neurons();
@@ -261,44 +270,56 @@ class Network {
             optimized.propagation_sentences[i].reverse();
         optimized.propagation_sentences.reverse();
         
-        var hardcode = "";
-        hardcode += "var F = Float64Array ? new Float64Array(" + optimized.memory +
-        ") : []; ";
-        for (var i in optimized.variables)
-            hardcode += "F[" + optimized.variables[i].id + "] = " + (optimized.variables[
-            i].value || 0) + "; ";
-        hardcode += "var activate = function(input){\n";
-        for (var i in optimized.inputs)
-            hardcode += "F[" + optimized.inputs[i] + "] = input[" + i + "]; ";
-        for (var currentLayer in optimized.activation_sentences) {
-            if (optimized.activation_sentences[currentLayer].length > 0) {
-                for (var currentNeuron in optimized.activation_sentences[currentLayer]) {
-                    hardcode += optimized.activation_sentences[currentLayer][currentNeuron].join(" ");
-                    hardcode += optimized.trace_sentences[currentLayer][currentNeuron].join(" ");
+
+        var F = Float64Array ? new Float64Array(optimized.memory) : []
+        for (var i in optimized.variables) {
+            F[optimized.variables[i].id] = (optimized.variables[i].value || 0)
+        }
+        // New "activate" function?
+        var activate = function(input) {
+            for (var i in optimized.inputs)
+                F[optimized.inputs[i]] = input[i]
+            for (var currentLayer in optimized.activation_sentences) {
+                if (optimized.activation_sentences[currentLayer].length > 0) {
+                    for (var currentNeuron in optimized.activation_sentences[currentLayer]) {
+                        // What the hell is this?
+                        optimized.activation_sentences[currentLayer][currentNeuron].join(" ")
+                        // What the hell is this?
+                        optimized.trace_sentences[currentLayer][currentNeuron].join(" ")
+                    }
+                }
+            }
+            var output = []
+            for (var i in optimized.outputs) {
+                output[i] = F[optimized.outputs[i]]
+            }
+            return output
+        }
+            
+        // New "propagate" function?
+        var propagate = function(rate, target) {
+            F[optimized.variables.rate.id] = rate
+            for (var i in optimized.targets) {
+                F[optimized.targets[i]] = target[i]
+            }
+            for (var currentLayer in optimized.propagation_sentences) {
+                for (var currentNeuron in optimized.propagation_sentences[currentLayer]) {
+                    // What the hell is this?
+                    optimized.propagation_sentences[currentLayer][currentNeuron].join(" ")
                 }
             }
         }
-        hardcode += " var output = []; "
-        for (var i in optimized.outputs)
-            hardcode += "output[" + i + "] = F[" + optimized.outputs[i] + "]; ";
-        hardcode += "return output; }; "
-        hardcode += "var propagate = function(rate, target){\n";
-        hardcode += "F[" + optimized.variables.rate.id + "] = rate; ";
-        for (var i in optimized.targets)
-            hardcode += "F[" + optimized.targets[i] + "] = target[" + i + "]; ";
-        for (var currentLayer in optimized.propagation_sentences)
-        for (var currentNeuron in optimized.propagation_sentences[currentLayer])
-            hardcode += optimized.propagation_sentences[currentLayer][currentNeuron].join(" ") + " ";
-        hardcode += " };\n";
-        hardcode +=
-        "var ownership = function(memoryBuffer){\nF = memoryBuffer;\nthis.memory = F;\n};\n";
-        hardcode +=
-        "return {\nmemory: F,\nactivate: activate,\npropagate: propagate,\nownership: ownership\n};";
-        hardcode = hardcode.split(";").join(";\n");
+        var ownership = function(memoryBuffer){
+            F = memoryBuffer
+            this.memory = F
+        }
+        return {
+            memory: F,
+            activate: activate,
+            propagate: propagate,
+            ownership: ownership
+        }
         
-        var constructor = new Function(hardcode);
-        
-        var network = constructor();
         network.data = {
             variables: optimized.variables,
             activate: optimized.activation_sentences,
@@ -321,7 +342,7 @@ class Network {
         this.optimized = network;
         this.activate = network.activate;
         this.propagate = network.propagate;
-        
+        */
     }
     
     // restores all the values from the optimized network the their respective objects in order to manipulate the network
@@ -747,6 +768,8 @@ class Trainer {
         
         // iterations: 100000
         
+        // This "Options" type is in the Trainer class?
+        
         var defaults:Options = Options(iterations: 10, error: 0.005, rate: 0.2, cost: Trainer.Cost.MSE(Trainer.Cost()), shuffle: true, log: 0);
     
         
@@ -826,6 +849,8 @@ class Trainer {
     }
 }
 
+
+// This is the entry point for this program
 
 var perceptron = Architect.Perceptron(2, 3, 1)
 perceptron.trainer.XOR(
